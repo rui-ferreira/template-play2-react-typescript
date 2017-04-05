@@ -1,0 +1,22 @@
+<project name="Play 2 / React / Typescript sample" default="zipdist" basedir=".">
+    <description>Sample project to illustrate how to setup Play 2 to work with React and Typescript</description>
+
+    <target name="frontend-dist" description="Generates frontend dist">
+        <exec executable="yarn" dir="frontend">
+            <arg value="install" />
+        </exec>
+
+        <exec executable="yarn" dir="frontend">
+            <arg value="run" />
+            <arg value="dist" />
+        </exec>
+    </target>
+
+    <target name="zipdist" depends="frontend-dist" description="Generate the distribution package">
+        <exec executable="activator">
+            <arg value="clean"/>
+            <arg value="dist"/>
+        </exec>
+    </target>
+
+</project>

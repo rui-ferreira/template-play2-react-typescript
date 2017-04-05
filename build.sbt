@@ -11,3 +11,6 @@ libraryDependencies ++= Seq(
   cache,
   javaWs
 )
+
+//Register the FrontendWatch hook and deps
+PlayKeys.playRunHooks += FrontendWatch(file("frontend")).hook()

@@ -1,0 +1,22 @@
+{
+  "name": "template-play2-react-typescript",
+  "version": "1.0.0",
+  "description": "Play 2 / React / Typescript sample",
+  "author": "Rui Ferreira (rui.mrf@gmail.com)",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ../public/frontend",
+    "dev-watch": "./node_modules/.bin/webpack --watch",
+    "dist": "yarn run clean && ./node_modules/.bin/webpack -p"
+  },
+  "dependencies": {
+    "@types/react": "^15.0.21",
+    "@types/react-dom": "^0.14.23",
+    "awesome-typescript-loader": "^3.1.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.2.2",
+    "webpack": "^2.3.3"
+  }
+}

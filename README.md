@@ -31,7 +31,7 @@ While developing the application, use the `run` command in the SBT console. The 
 
 In this mode, the server will be launched with the auto-reload feature enabled, meaning that for each request Play will check your project and recompile required sources. If needed the application will restart automatically.
 
-Our SBT build (`build.sbt`) registers a Play hook to also watch for changes in the frontend code. Take a look at `project/FrontendWatch.scala`: it starts `webpack` in watch mode when the Play app starts and stops the process when the app stops too. Webpack will bundle all frontend code nicely and put it in `public/frontend` (btw, you should `git-ignore` this folder), which is already under Play's standard umbrella.
+Our SBT build (`build.sbt`) registers a Play hook to also watch for changes in the frontend code. Take a look at `project/FrontendWatch.scala`: it starts `webpack` in watch mode when the Play app starts and stops the process when the app stops. Webpack will bundle all frontend code nicely and put it in `public/frontend` (btw, you should `git-ignore` this folder), which is already under Play's standard umbrella.
 
 Simply put, just run your old known `activator run`, write your code and reload the browser to see it coming to life.
 
@@ -40,7 +40,7 @@ Simply put, just run your old known `activator run`, write your code and reload 
 
 The best and usual approach to create a production distributable in Play is to use the `dist` task. This task builds a binary version of your application that you can deploy to a server without any dependency on SBT, the only thing the server needs is a Java installation.
 
-To build the frontend assets production-ready, we use `webpack -p`. Unfortunately, there's no simple way to automate this in the SBT stages, so it would run only when `sbt dist` was called. This means you first need to build the frontend assets and then run the SBT `dist task`, like follows:
+To build the frontend assets production-ready, we use `webpack -p`. Unfortunately, there's no simple way to automate this in the SBT stages in a way that it would run only when `sbt dist` is called. This means you first need to build the frontend assets and then run the SBT task, as follows:
     
     cd frontend
     yarn run dist

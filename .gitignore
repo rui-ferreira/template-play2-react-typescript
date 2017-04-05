@@ -6,3 +6,6 @@ target
 /.project
 /.settings
 /RUNNING_PID
+yarn.lock
+frontend/node_modules
+public/frontend
