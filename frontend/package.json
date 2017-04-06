@@ -6,13 +6,14 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf ../public/frontend",
-    "dev-watch": "./node_modules/.bin/webpack --watch",
+    "dev-watch": "./node_modules/.bin/nodemon --watch webpack.config.js --exec \"./node_modules/.bin/webpack --watch\"",
     "dist": "yarn run clean && ./node_modules/.bin/webpack -p"
   },
   "dependencies": {
     "@types/react": "^15.0.21",
     "@types/react-dom": "^0.14.23",
     "awesome-typescript-loader": "^3.1.2",
+    "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "source-map-loader": "^0.2.1",
