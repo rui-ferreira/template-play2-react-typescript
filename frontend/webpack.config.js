@@ -17,9 +17,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../public/frontend'),
         publicPath: '/assets/',
-        filename: '[name].js',
-        library: 'BeckerUSE_[name]',
-        libraryTarget: 'umd'
+        filename: '[name].js'
     },
 
     // Enable sourcemaps for debugging webpack's output.
