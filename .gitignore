@@ -9,3 +9,4 @@ target
 yarn.lock
 frontend/node_modules
 public/frontend
+frontend/src/styles/*.scss.d.ts
